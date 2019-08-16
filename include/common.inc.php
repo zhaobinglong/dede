@@ -7,18 +7,10 @@
  * @link           http://www.dedecms.com
  */
 
-
-
-// 生产环境使用production
-define('DEDE_ENVIRONMENT', 'production');
-
-
-if ( DEDE_ENVIRONMENT == 'production' )
-{
-    error_reporting(E_ALL || ~E_NOTICE);
-} else {
-    error_reporting(E_ALL);
-}
+// 报错级别设定,一般在开发环境中用E_ALL,这样能够看到所有错误提示
+// 系统正常运行后,直接设定为E_ALL || ~E_NOTICE,取消错误显示
+// error_reporting(E_ALL);
+error_reporting(E_ALL || ~E_NOTICE);
 define('DEDEINC', str_replace("\\", '/', dirname(__FILE__) ) );
 define('DEDEROOT', str_replace("\\", '/', substr(DEDEINC,0,-8) ) );
 define('DEDEDATA', DEDEROOT.'/data');
@@ -32,28 +24,28 @@ define('DEDEAPPTPL', './templates');
 
 define('DEBUG_LEVEL', FALSE);
 
-if (version_compare(PHP_VERSION, '5.3.0', '<'))
+if (version_compare(PHP_VERSION, '5.3.0', '<')) 
 {
     set_magic_quotes_runtime(0);
 }
 
-if (version_compare(PHP_VERSION, '5.4.0', '>='))
+if (version_compare(PHP_VERSION, '5.4.0', '>=')) 
 {
     if (!function_exists('session_register'))
     {
         function session_register()
-        {
-            $args = func_get_args();
-            foreach ($args as $key){
-                $_SESSION[$key]=$GLOBALS[$key];
-            }
-        }
+        { 
+            $args = func_get_args(); 
+            foreach ($args as $key){ 
+                $_SESSION[$key]=$GLOBALS[$key]; 
+            } 
+        } 
         function session_is_registered($key)
         {
-            return isset($_SESSION[$key]);
+            return isset($_SESSION[$key]); 
         }
-        function session_unregister($key){
-            unset($_SESSION[$key]);
+        function session_unregister($key){ 
+            unset($_SESSION[$key]); 
         }
     }
 }
@@ -73,7 +65,7 @@ function _RunMagicQuotes(&$svar)
         }
         else
         {
-            if( strlen($svar)>0 && preg_match('#^(cfg_|GLOBALS|_GET|_POST|_COOKIE|_SESSION)#',$svar) )
+            if( strlen($svar)>0 && preg_match('#^(cfg_|GLOBALS|_GET|_POST|_COOKIE)#',$svar) )
             {
               exit('Request var not allow!');
             }
@@ -83,32 +75,32 @@ function _RunMagicQuotes(&$svar)
     return $svar;
 }
 
-if (!defined('DEDEREQUEST'))
+if (!defined('DEDEREQUEST')) 
 {
     //检查和注册外部提交的变量   (2011.8.10 修改登录时相关过滤)
     function CheckRequest(&$val) {
         if (is_array($val)) {
             foreach ($val as $_k=>$_v) {
                 if($_k == 'nvarname') continue;
-                CheckRequest($_k);
+                CheckRequest($_k); 
                 CheckRequest($val[$_k]);
             }
         } else
         {
-            if( strlen($val)>0 && preg_match('#^(cfg_|GLOBALS|_GET|_POST|_COOKIE|_SESSION)#',$val)  )
+            if( strlen($val)>0 && preg_match('#^(cfg_|GLOBALS|_GET|_POST|_COOKIE)#',$val)  )
             {
                 exit('Request var not allow!');
             }
         }
     }
-
+    
     //var_dump($_REQUEST);exit;
     CheckRequest($_REQUEST);
 	CheckRequest($_COOKIE);
 
     foreach(Array('_GET','_POST','_COOKIE') as $_request)
     {
-        foreach($$_request as $_k => $_v)
+        foreach($$_request as $_k => $_v) 
 		{
 			if($_k == 'nvarname') ${$_k} = $_v;
 			else ${$_k} = _RunMagicQuotes($_v);
@@ -129,11 +121,8 @@ if( preg_match('/windows/i', @getenv('OS')) )
     $isSafeMode = false;
 }
 
-//系统配置参数
-require_once(DEDEDATA."/config.cache.inc.php");
-
 //Session保存路径
-$enkey = substr(md5(substr($cfg_cookie_encode,0,5)),0,10);
+$enkey = substr(md5(substr($cfg_domain_cookie,0,5)),0,10);
 $sessSavePath = DEDEDATA."/sessions_{$enkey}";
 if ( !is_dir($sessSavePath) ) mkdir($sessSavePath);
 
@@ -141,6 +130,9 @@ if(is_writeable($sessSavePath) && is_readable($sessSavePath))
 {
     session_save_path($sessSavePath);
 }
+
+//系统配置参数
+require_once(DEDEDATA."/config.cache.inc.php");
 
 //转换上传的文件相关的变量及安全处理、并引用前台通用的上传函数
 if($_FILES)
@@ -150,11 +142,6 @@ if($_FILES)
 
 //数据库配置文件
 require_once(DEDEDATA.'/common.inc.php');
-
-if ( !isset($cfg_dbtype)  )
-{
-    $cfg_dbtype = 'mysql';
-}
 
 //载入系统验证安全配置
 if(file_exists(DEDEDATA.'/safe/inc_safe_config.php'))
@@ -238,7 +225,7 @@ $cfg_soft_dir = $cfg_medias_dir.'/soft';
 $cfg_other_medias = $cfg_medias_dir.'/media';
 
 //软件摘要信息，****请不要删除本项**** 否则系统无法正确接收系统漏洞或升级信息
-$cfg_version = 'V57_UTF8_SP2';
+$cfg_version = 'V57_UTF8_SP1';
 $cfg_soft_lang = 'utf-8';
 $cfg_soft_public = 'base';
 
@@ -305,26 +292,49 @@ if(!isset($cfg_NotPrintHead)) {
 }
 
 //自动加载类库处理
-if (version_compare(PHP_VERSION, '7.2.0', '>='))
+function __autoload($classname)
 {
-    require_once(DEDEINC.'/autoload7.inc.php');
-} else {
-    require_once(DEDEINC.'/autoload.inc.php');
+    global $cfg_soft_lang;
+    $classname = preg_replace("/[^0-9a-z_]/i", '', $classname);
+    if( class_exists ( $classname ) )
+    {
+        return TRUE;
+    }
+    $classfile = $classname.'.php';
+    $libclassfile = $classname.'.class.php';
+        if ( is_file ( DEDEINC.'/'.$libclassfile ) )
+        {
+            require DEDEINC.'/'.$libclassfile;
+        }
+        else if( is_file ( DEDEMODEL.'/'.$classfile ) ) 
+        {
+            require DEDEMODEL.'/'.$classfile;
+        }
+        else
+        {
+            if (DEBUG_LEVEL === TRUE)
+            {
+                echo '<pre>';
+				echo $classname.'类找不到';
+				echo '</pre>';
+				exit ();
+            }
+            else
+            {
+                header ( "location:/404.html" );
+                die ();
+            }
+        }
 }
-
 
 //引入数据库类
-if ( $GLOBALS['cfg_dbtype'] =='mysql' )
+if ($GLOBALS['cfg_mysql_type'] == 'mysqli' && function_exists("mysqli_init"))
 {
-    if ($GLOBALS['cfg_mysql_type'] == 'mysqli' && function_exists("mysqli_init") || !function_exists('mysql_connect'))
-    {
-        require_once(DEDEINC.'/dedesqli.class.php');
-    } else {
-        require_once(DEDEINC.'/dedesql.class.php');
-    }
+    require_once(DEDEINC.'/dedesqli.class.php');
 } else {
-    require_once(DEDEINC.'/dedesqlite.class.php');
+    require_once(DEDEINC.'/dedesql.class.php');
 }
+
 
 //全局常用函数
 require_once(DEDEINC.'/common.func.php');

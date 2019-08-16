@@ -11,7 +11,7 @@
  * @package        DedeCMS.Site
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
- * @link           http://www.dedecms.com
+ * @link           http://www.dede58.com
  */
 define('DEDEMOB', 'Y');
 

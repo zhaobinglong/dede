@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="layoutmode" content="standard">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="renderer" content="webkit">
+    <!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+    <meta name="wap-font-scale" content="no">
+    <meta content="telephone=no" name="format-detection"/>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <script type="text/javascript">
+        //html root的字体计算应该放在最前面，这样计算就不会有误差了/
+        var _htmlFontSize = (function () {
+            var clientWidth = document.documentElement ? document.documentElement.clientWidth : document.body.clientWidth;
+            if (clientWidth > 640) clientWidth = 640;
+            document.documentElement.style.fontSize = clientWidth * 1 / 16 + "px";
+            return clientWidth * 1 / 16;
+        })();
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="/m/skin/css/base.min.css" title="default"/>
+    <link rel="stylesheet" type="text/css" href="/m/skin/css/banneranimation.min.css" title=""/>
+    <link rel="stylesheet" id="mobiStyleTemplateCss" type="text/css" href="/m/skin/css/1000_4.min.css"/>
+    <link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="/m/skin/css/cubenavigation.min.css"/>
+    <link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="/m/skin/css/style.css"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!-- 系统特殊隐藏栏目隐藏头部、banner -->
+    </head>
+    <body faiscoMobi="true" id="g_body" class="g_locale2052 mobiCol3">
+<div class="webLeft"></div>
+<div id="g_web" class="g_web"> 
+      
+      <!-- this is loading  -->
+      <div id="webLoading" class="loading" style='display:none;'>
+    <div id="splashscreen" class='splashscreen ui-loader'> <span class='ui-icon ui-icon-loading spin'></span> </div>
+  </div>
+      {dede:include filename="header_m.htm"/}
+      <div id="webBannerBox" class="webBannerBox  "> </div>
+      <div id="webContainerBox" class="webContainerBox">
+    <div id="webModuleContainer" class="webModuleContainer">
+          <div id='module7'  class='form Handle  formStyle10 ' _autoHeight='1'>
+        <div   class='formBannerTitle formBannerTitle7'>
+              <div class='titleLeft titleLeft7'> </div>
+              <div class='titleCenter titleCenter7'>
+            <div class='titleText titleText7'>
+                  <div class='titleTextIcon icon-titleText'>&nbsp;</div>
+                  <div class='textContent'>{dede:field name='typename'/}</div>
+                </div>
+            <div class='formBannerMore formBannerMore7'></div>
+          </div>
+              <div class='titleRight titleRight7'> </div>
+            </div>
+        <div class='formMiddle formMiddle7'>
+              <div class='middleLeft middleLeft7'> </div>
+              <div class='middleCenter middleCenter7'>
+            <div class='formMiddleContent formMiddleContent7 moduleContent'>
+                  <div class='msgBoard'>
+                <div class='msgTop'>
+                      <div class='g_globalLine mtitle'>
+                    <div class='mbTitle publishIcon'><span class='icon-publishIcon'></span>发表留言 </div>
+                  </div>
+                      <div class='noticeArea'>
+                    <div class='notice' style='display:none;'></div>
+                  </div>
+                      <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="action" value="post" />
+                    <input type="hidden" name="diyid" value="1" />
+                    <input type="hidden" name="do" value="2" />
+                    <div class='g_globalLine'>
+                          <input id='reqName' name="name" type='text' maxlength='50 '
+                                                                     placeholder='姓名(必填)'
+                                                                     class='msg_isMust msg_ipt g_input'/>
+                          <span
+                                            class='icon-mnameIcon'></span></div>
+                    <div class='g_globalLine'>
+                          <input id='reqPhone' name="tel" type='tel' maxlength='50 '
+                                                                     placeholder='联系电话' class=' msg_ipt g_input'/>
+                          <span
+                                            class='icon-mphoneIcon'></span></div>
+                    <div class='g_globalLine'>
+                          <textarea id='reqContent' name="nr" class='g_textArea msg_textArea'
+                                                                        maxlength='200' placeholder='内容'/>
+                          </textarea>
+                          <span class='icon-mmsgIcon'></span></div>
+                    <div style='clear:both'></div>
+                    <div class='g_globalLine '>
+                          <input type='submit' class='g_button sendIcon msgSubmitButton submitIcon' value='提交'/>
+                          <span class='mustSpan'>&nbsp&nbsp</span></div>
+                    <input type="hidden" name="dede_fields" value="bt,text;name,text;tel,text;nr,text" />
+                    <input type="hidden" name="dede_fieldshash" value="9bb0c45fab1ce3ca32d8dc193fbddc25" />
+                  </form>
+                    </div>
+                <div class='msgBottom'>
+                      <div class='msgBottomTop'>
+                    <div class='g_globalLine mtitle'>
+                          <div class='mbTitle userMsgIcon' style='display: inline-block;'><span
+                                                    class='icon-userMsgIcon'></span>用户留言 </div>
+                        </div>
+                  </div>
+                    </div>
+              </div>
+                </div>
+          </div>
+              <div class='middleRight middleRight7'> </div>
+            </div>
+      </div>
+        </div>
+  </div>
+      {dede:include filename="footer_m.htm"/} 
+      <!--设置网站的背景颜色  start-->
+      <div class="webBackgroundBox  ">
+    <div id="webBodyBackground" class="webBackground "></div>
+    <div id='navExistOffPanel' class='navExistOffPanel'></div>
+  </div>
+      <!--设置网站的背景颜色  end--> 
+      <!-- ------------------------------------------ --> 
+    </div>
+<div class="webRight"></div>
+<script type="text/javascript" language="javascript">
+
+
+    //管理态下的预览页面提前作处理
+    if (!false && window.top !== window.self) {
+        var g_className = document.getElementById("g_body").className;
+        document.getElementById("g_body").className = g_className + ' g_viewMode';
+    }
+</script> 
+<script type="text/javascript" charset="utf-8" src="/m/skin/js/jqmobi.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="/m/skin/js/jqmobi_ui.min.js"></script> 
+<script id="mobiOperationJS" type="text/javascript" charset="utf-8"
+        src="/m/skin/js/mobi.min.js"></script> 
+<script type="text/javascript" src="/m/skin/js/2052.min.js"></script> 
+<script type="text/javascript">
+    var _jsErrCahche = [];
+
+
+
+
+    if (typeof Fai == 'undefined'){
+        Fai = {};
+        //解决页面被嵌套在iframe的场景
+
+        Fai.top = window;
+
+    }
+
+
+
+
+    Fai.top._bannerData = {};  //横幅数据
+    Fai.top._resRoot = 'http://mo.faisys.com';
+    Fai.top._templateFrameId = 1000;
+    Fai.top._templateLayoutId = 4;
+    Fai.top._mobiSiteTitleChanged = 0; 	//用于记录网站标题是否有改动
+    Fai.top._mobiSiteTitle = {};//在线客服
+    Fai.top._openOnlineService = true;
+    Fai.top._manageMode = false;
+    Fai.top.sessionMemberId = 0;
+    Fai.top.memberName = "";
+    Fai.top._colInfo = {};
+    Fai.top._lcid = 2052;   // 当前的语言版本
+    Fai.top.wxShareIcon_id  = "";
+    Fai.top.wxShareIcon_ShowType = 0;
+
+    jm(document).ready(function() {
+        //判断该栏目是否被删除
+
+        //管理态下的预览页面提前作处理
+        //Mobi.viewPageBeforeInit();
+
+        // 绑定退出事件
+        jm(window).bind("load", function() {
+
+//当前模块 start
+
+
+            //调整导航栏与g_web的top值
+            //部分主题有css3动画，所以会导致计算失误，需要等css3动画执行完之后计算
+            Mobi.autoFixGWebTop(4);
+
+
+
+            Mobi.initFooterHeight();
+        });
+
+        //手机视图初始化函数
+        Mobi.initMobiPage({"presetIndex":0,"cube":0,"layout":4,"imagePage":347});
+
+        // 取统计数据
+        if(true)
+        {
+            Mobi.statisticalMobiVisitors({});
+        }
+
+        //前端性能数据上报
+        Mobi.report();
+
+        Mobi.showQqBg();
+        Mobi.showPhonesBg();
+        Mobi.setShowSiteTitleBgFlag('0');
+        Mobi.changeSiteTitleBg('null','null','null','null','null');
+        Mobi.logoSizeCompressByMargin();
+        Mobi.titlePositionRefreshByLogo();
+        Mobi.fixImageHeight('module308');
+        Mobi.initModulePhotoDetailSwipe('module308', [{}]);
+
+
+
+
+    });
+    //Mobi.preventScroll(document.getElementById("g_body"));//阻止滚轮事件冒泡
+</script> 
+<script type="text/javascript">
+    var _jsErrCahche = [];
+
+
+    if (typeof Fai == 'undefined') {
+        Fai = {};
+        //解决页面被嵌套在iframe的场景
+
+        Fai.top = window;
+
+    }
+
+
+    Fai.top._bannerData = {
+        "h": false,
+        "bn": 1,
+        "b": [{
+            "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+            "t": 1,
+            "lt": 0,
+            "u": "",
+            "p": "",
+            "tp": "",
+            "w": 640,
+            "h": 300,
+            "aj": ""
+        }],
+        "c": [{
+            "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+            "p": "",
+            "t": 1,
+            "tp": "",
+            "w": 640,
+            "h": 300
+        }],
+        "showType": 0,
+        "st": 6,
+        "et": 1
+    };  //横幅数据
+    Fai.top._resRoot = 'http://mo.faisys.com';
+    Fai.top._templateFrameId = 1000;
+    Fai.top._templateLayoutId = 4;
+    Fai.top._mobiSiteTitleChanged = 0; 	//用于记录网站标题是否有改动
+    Fai.top._mobiSiteTitle = {
+        "fontType": 0,
+        "align": 0,
+        "font": {"size": 12, "family": "", "colorType": 0, "color": "#000"},
+        "name": "TEMPLATE",
+        "bgType": "0",
+        "bgFont": {"color": "#000", "alpha": 100},
+        "bgImgFileId": "",
+        "bgImgStyle": "1"
+    };   	//网站标题数据
+    Fai.top._onlineServiceJson = {
+        "map": {
+            "open": true,
+            "name": "在线地图",
+            "city": "广州市",
+            "mark": "",
+            "d_address": "海珠区",
+            "type": 3,
+            "typeStr": "map"
+        },
+
+        "open": true,
+        "order": [3, 2, 1, 4, 5]
+    };//在线客服
+    Fai.top._openOnlineService = true;
+    Fai.top._manageMode = false;
+    Fai.top.sessionMemberId = 0;
+    Fai.top.memberName = "";
+    Fai.top._colInfo = {
+        "aid": 2994444,
+        "wid": 0,
+        "id": 3,
+        "type": 3,
+        "flag": 0,
+        "moduleList": [307],
+        "moduleHidden": [302, 306, 301],
+        "createTime": 1452234465000,
+        "updateTime": 1426662827000,
+        "authMemberLevelId": 0,
+        "extId": 0,
+        "name": "首页",
+        "defaultName": "首页",
+        "url": "/m/",
+        "valid": true,
+        "baseSetting": {
+            "c": 0,
+            "i": 0,
+            "iconType": 0,
+            "id": 0,
+            "content": "",
+            "classname": "",
+            "color": "",
+            "colIconType": 0,
+            "colIconCusType": 0,
+            "iconFileId": "",
+            "jumpCtrl": {"ide": "", "columnType": 0}
+        },
+        "columnStyle": {"s": 2},
+        "title": {
+            "fontType": 0,
+            "align": 0,
+            "font": {"size": 12, "family": "", "colorType": 0, "color": "#000"},
+            "bgType": "0",
+            "bgFont": {"color": "#000", "alpha": 100},
+            "bgImgFileId": "",
+            "bgImgStyle": "1"
+        },
+        "logo": {
+            "i": "",
+            "h": true,
+            "a": 1,
+            "style": 0,
+            "marginType": 0,
+            "margin": {"top": 0, "bottom": 0, "left": 0, "right": 0}
+        },
+        "banner": {"showType": 0, "h": false, "bn": 1, "b": [{"i": "1", "t": 0}], "st": 6, "et": 1, "c": []},
+        "independent": false,
+        "allowed": true,
+        "selectable": true,
+        "forbid": false
+    };
+    Fai.top._lcid = 2052;   // 当前的语言版本
+    Fai.top.wxShareIcon_id = "";
+    Fai.top.wxShareIcon_ShowType = 0;
+
+    jm(document).ready(function () {
+
+        //管理态下的预览页面提前作处理
+        //Mobi.viewPageBeforeInit();
+
+        // 绑定退出事件
+        jm(window).bind("load", function () {
+
+//当前模块 start
+
+            //Mobi.initSwipe('bannerSwipe',{"h":false,"bn":1,"b":[{"i":"ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI","t":1,"lt":0,"u":"","p":"","tp":"","w":640,"h":300,"aj":""}],"c":[{"i":"ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI","p":"","t":1,"tp":"","w":640,"h":300}],"showType":0,"st":6,"et":1});
+            if (!Mobi.bannerAnimate.init({
+                        "h": false,
+                        "bn": 1,
+                        "b": [{
+                            "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                            "t": 1,
+                            "lt": 0,
+                            "u": "",
+                            "p": "",
+                            "tp": "",
+                            "w": 640,
+                            "h": 300,
+                            "aj": ""
+                        }],
+                        "c": [{
+                            "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                            "p": "",
+                            "t": 1,
+                            "tp": "",
+                            "w": 640,
+                            "h": 300
+                        }],
+                        "showType": 0,
+                        "st": 6,
+                        "et": 1
+                    })) {
+                Mobi.initBannerDefaultDom({
+                    "h": false,
+                    "bn": 1,
+                    "b": [{
+                        "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                        "t": 1,
+                        "lt": 0,
+                        "u": "",
+                        "p": "",
+                        "tp": "",
+                        "w": 640,
+                        "h": 300,
+                        "aj": ""
+                    }],
+                    "c": [{
+                        "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                        "p": "",
+                        "t": 1,
+                        "tp": "",
+                        "w": 640,
+                        "h": 300
+                    }],
+                    "showType": 0,
+                    "st": 6,
+                    "et": 1
+                });
+                Mobi.initSwipe('bannerSwipe', {
+                    "h": false,
+                    "bn": 1,
+                    "b": [{
+                        "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                        "t": 1,
+                        "lt": 0,
+                        "u": "",
+                        "p": "",
+                        "tp": "",
+                        "w": 640,
+                        "h": 300,
+                        "aj": ""
+                    }],
+                    "c": [{
+                        "i": "ABUIABACGAAgncqkqAUo9cnjlwcwgAU4rAI",
+                        "p": "",
+                        "t": 1,
+                        "tp": "",
+                        "w": 640,
+                        "h": 300
+                    }],
+                    "showType": 0,
+                    "st": 6,
+                    "et": 1
+                });
+            }
+            ;
+
+            //调整导航栏与g_web的top值
+            //部分主题有css3动画，所以会导致计算失误，需要等css3动画执行完之后计算
+            Mobi.autoFixGWebTop(4);
+
+            //加载背景音乐
+            if (0 == 1) {
+                Mobi.initBgm('http://2994444.s21d-2.faiusrd.com/0/');
+            } else {
+                Mobi.initBgmCookie();
+            }
+
+
+            Mobi.initFooterHeight();
+        });
+
+        //手机视图初始化函数
+        Mobi.initMobiPage({
+            "id": 1000,
+            "createTime": "2015-02-27",
+            "preview": "/m/skin/image/1000.jpg",
+            "previewGif": "/m/skin/image/1000.gif",
+            "color": 0,
+            "style": ["/m/skin/css/1000_1.min.css?v=201601211903", "/m/skin/css/1000_2.min.css?v=201601211903", "/m/skin/css/1000_3.min.css?v=201601211903", "/m/skin/css/1000_4.min.css?v=201601211903", "/m/skin/css/1000_5.min.css?v=201601211903"],
+            "type": 1,
+            "moduleStyle": 0,
+            "designType": 1,
+            "presetIndex": 0,
+            "cube": 0,
+            "layout": 4,
+            "imagePage": 347,
+            "backgroundImage": 0,
+            "colors": [],
+            "colorsName": []
+        });
+
+        // 取统计数据
+        if (true) {
+
+
+            Mobi.statisticalMobiVisitors({
+                colId: 3,
+                pdId: -1,
+                ndId: -1,
+                sc: 0,
+                rf: ""
+            });
+        }
+
+        //前端性能数据上报
+        Mobi.report();
+
+        Mobi.showQqBg();
+        Mobi.showPhonesBg();
+        Mobi.setShowSiteTitleBgFlag('0');
+        Mobi.changeSiteTitleBg('null', 'null', 'null', 'null', 'null');
+        Mobi.logoSizeCompressByMargin();
+        Mobi.titlePositionRefreshByLogo();
+
+
+    });
+    //Mobi.preventScroll(document.getElementById("g_body"));//阻止滚轮事件冒泡
+</script>
+</body>
+</html>

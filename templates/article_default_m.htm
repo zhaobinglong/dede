@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=2.0, user-scalable=1"> -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="layoutmode" content="standard">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="renderer" content="webkit">
+<!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+<meta name="wap-font-scale" content="no">
+<meta content="telephone=no" name="format-detection" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<script type="text/javascript">
+
+		//html root的字体计算应该放在最前面，这样计算就不会有误差了/
+		var _htmlFontSize = (function(){
+			var clientWidth = document.documentElement ? document.documentElement.clientWidth : document.body.clientWidth;
+			if(clientWidth > 640) clientWidth = 640;
+			document.documentElement.style.fontSize = clientWidth * 1/16+"px";
+			return clientWidth * 1/16;
+		})();
+
+	</script>
+<link rel="stylesheet" type="text/css" href="/m/skin/css/base.min.css" title="default" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/banneranimation.min.css" title="" />
+<link rel="stylesheet" id="mobiStyleTemplateCss" type="text/css" href="/m/skin/css/1000_4.min.css"/>
+<link rel="stylesheet" id="fontsIcoCss" type="text/css" href="/m/skin/css/fontsico.min.css"/>
+
+<!-- //输出模块样式css -->
+<style id='mobiStyleNav' type='text/css'>
+.open .navItem:nth-child(2) {
+	transition-delay: 160ms;
+}
+.open .navItem:nth-child(4) {
+	transition-delay: 240ms;
+}
+#navbar_101 .icon-navItemIcon:before {
+	content: '';
+	color: #fff;
+}
+#navbar_101 .icon-navItemIcon {
+	background-image: none;
+}
+.open .navItem:nth-child(6) {
+	transition-delay: 320ms;
+}
+.open .navItem:nth-child(8) {
+	transition-delay: 400ms;
+}
+#navbar_104 .icon-navItemIcon:before {
+	content: '';
+	color: #fff;
+}
+#navbar_104 .icon-navItemIcon {
+	background-image: none;
+}
+.open .navItem:nth-child(10) {
+	transition-delay: 480ms;
+}
+.open .navItem:nth-child(12) {
+	transition-delay: 560ms;
+}
+</style>
+<style id='mobiCubeStyleModule'></style>
+<style id='productNewDetailStyleModule'></style>
+<style id='mobiSearchStyleModule'></style>
+<style type="text/css">
+.webDetailPage {
+	display: none;
+}
+.form {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.g_web {
+	background: #fff;
+}
+.webContainerBox {
+	background: #fff;
+	min-height: 100%;
+}
+.webContainerBox .form .formMiddle {
+	background: #fff;
+}
+.g_web .moveAnimation, .g_web .webModuleContainer {
+	transform: initial;
+	-webkit-transform: initial;
+}
+</style>
+<!-- 系统特殊隐藏栏目隐藏头部、banner -->
+<style>
+.newsNewDetailPanel .newsContent p {
+	font-size: 0.75rem !important;
+}
+</style>
+</head>
+<body faiscoMobi="true" id="g_body" class="g_locale2052 mobiCol20">
+<div class="webLeft"></div>
+<div id="g_web" class="g_web"> 
+  <!-- this is loading  -->
+  <div id="webLoading" class="loading" style='display:none;'>
+    <div id="splashscreen" class='splashscreen ui-loader'> <span class='ui-icon ui-icon-loading spin'></span> </div>
+  </div>
+  <div id="webTopBox" class="webTopBox webDetailPage ">
+    <div id="webTop" class="webTop" >
+      <div id='navbar' class='navbar navBaseIcon'>
+        <div id='navbarList' class='navbarList'> </div>
+      </div>
+    </div>
+  </div>
+  <div id="webHeaderBox" class="webHeaderBox webDetailPage ">
+    <div class='navButton' id='navButton'>
+      <div class='navButtonPanel'></div>
+      <div class='menuNav'>
+        <div class='menuNavTip icon-menuNavTip'></div>
+      </div>
+    </div>
+    <div id='headerWhiteBg' class='headerSiteMaskWhiteBg'></div>
+    <div id='headerBg' class='headerSiteMaskBg'></div>
+    <div id='webHeader' class='webHeader webHeaderBg' >
+      <div id='header' class='header' style='padding:0px;'> <span class='pageLogo' style='display:none;' id='pageLogo' sid='0'  pw='160' ph='160'>
+        <div id='pageLogoImg' class='logoImg '></div>
+        </span> <span class='pageTitle' id='pageTitle' >{dede:field.title/}</span> </div>
+    </div>
+  </div>
+  <div id="webBannerBox" class="webBannerBox webDetailPage "> </div>
+  <div id="webContainerBox" class="webContainerBox moveAnimation">
+    <div id="webModuleContainer" class="webModuleContainer" style="overflow: hidden;">
+      <div id="module19" _headerhiden="1" class="form Handle  formStyle36 " _autoheight="1">
+        <div style="display:none;" class="formBannerTitle formBannerTitle19">
+          <div class="titleLeft titleLeft19"> </div>
+          <div class="titleCenter titleCenter19">
+            <div class="titleText titleText19">
+              <div class="titleTextIcon icon-titleText">&nbsp;</div>
+              <div class="textContent"></div>
+            </div>
+            <div class="formBannerMore formBannerMore19"></div>
+          </div>
+          <div class="titleRight titleRight19"> </div>
+        </div>
+        <div class="formMiddle formMiddle19">
+          <div class="middleLeft middleLeft19"> </div>
+          <div class="middleCenter middleCenter19">
+            <div class="formMiddleContent formMiddleContent19 moduleContent">
+              <div class="newsNewDetailPanel" id="newsNewDetailPanel19">
+                <div class="productDetailHeader detailHeaderColor" id="productDetailHeader19" style="background: rgba(255, 255, 255, 0.74902);"><span class="icon-gClose g_round g_iconMiddle newsBack icon-defaultColor" onclick="history.go(-1);"></span><a class="icon-gHome g_iconMiddle g_round newsHome icon-defaultColor" href="index.php" style="right:0.2rem"></a></div>
+                <div class="newsDetail" id="newsDetail19">
+                  <div id="newsDetailPanel">
+                    <div class="newsFigure" id="newsFigure19" style=" width=100%;height:10.0rem; background-image:url({dede:field name='picname'/});">
+                      <div style="display:none;"><img src="{dede:field name='picname'/}"></div>
+                      <div class="newsInfoTitle">
+                        <div class="g_displayClamp2" style="height:2rem;line-height:1rem;word-break:break-all;white-space: normal;overflow:hidden;text-overflow:ellipsis;">{dede:field.title/}</div>
+                      </div>
+                    </div>
+                    <div class="newsContentPanel">
+                      <div class="newsCustomPanel">
+                        <div class="newsCustom newsDate">{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</div>
+                        <div class="newsCustom newsAuthor"></div>
+                      </div>
+                      <div class="newsContent">
+                        <p> {dede:field.body/}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="middleRight middleRight19"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="webFooterBox" class="webFooterBox webDetailPage "> 
+      <!--图片详情Div -->
+      
+      <div id="webFooter" class="webFooter moveAnimation">
+        <div id="footer" class="footer">
+          <div class="bottomdiv">
+            <div class="bottom">
+              <div class="backtop" onclick="Mobi.scrollToTop(&quot;webContainerBox&quot;)">top<b></b></div>
+            </div>
+          </div>
+          <div class="technical">
+            <div class="technicalSupport">{dede:global.cfg_powerby/}</div>
+            <div class="technicalSupport">技术支持：<a href="http://www.dede58.com" target="_blank" hidefocus="true">织梦58</a><a class="PcVer" href="http://www.dede58.com" target="_blank" hidefocus="true">电脑版</a></div>
+          </div>
+        </div>
+      </div>
+      <div id="webCustomerServiceBox" class="webCustomerServiceBox" style="display: block;">
+        <div class="customerServiceDiv moveAnimation" id="customerServiceDiv">
+          <div id="customServiceLine_3" class="customServiceLine"></div>
+          <div class="service serviceClass_3" id="customerServiceType_3" style="width: 25%;"><a id="numberHref_3" href="javascript:;" onclick="Mobi.showMapService()">
+            <div class="icon iconClass_3 faisco-icons-gps1"></div>
+            <div id="describeName_3" class="describe">在线地图</div>
+            </a></div>
+          <div id="customServiceLine_2" class="customServiceLine"></div>
+          <div class="service serviceClass_2" id="customerServiceType_2" style="width: 25%;"><a id="numberHref_2" href="sms:13879785542">
+            <div class="icon iconClass_2 faisco-icons-mail1"></div>
+            <div id="describeName_2" class="describe">信息咨询</div>
+            </a></div>
+          <div id="customServiceLine_1" class="customServiceLine"></div>
+          <div class="service serviceClass_1" id="customerServiceType_1" style="width: 25%;"><a id="numberHref_1" href="tel:1398565998">
+            <div class="icon iconClass_1 faisco-icons-call1"></div>
+            <div id="describeName_1" class="describe">电话咨询</div>
+            </a></div>
+          <div id="customServiceLine_5" class="customServiceLine"></div>
+          <div class="service serviceClass_5" id="customerServiceType_5" style="width: 25%;">
+            <div id="showMoreQq" style="cursor:pointer">
+              <div class="icon iconClass_5 faisco-icons-qq1"></div>
+              <div id="describeName_5" class="describe">QQ客服</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="webMapServiceBox" id="webMapServiceBox">
+        <div style="display:table;height:100%;width:100%;border-collapse: collapse;">
+          <div style="display:table-row;">
+            <div style="display:table-cell;">
+              <div class="webMapHeader webHeaderBg">
+                <div class="g_close icon-gClose" onclick="Mobi.closeMapService()"></div>
+              </div>
+            </div>
+          </div>
+          <div style="height:100%;width:100%;display:table-row;">
+            <div style="height:100%;width:100%;display:table-cell;">
+              <iframe id="mobiSearchMapFrame" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="fullScreenDivCotainer" class="fullScreenDivCotainer form"></div>
+    </div>
+    <!--设置网站的背景颜色  start-->
+    <div class="webBackgroundBox webDetailPage ">
+      <div id="webBodyBackground" class="webBackground "></div>
+      <div id="navExistOffPanel" class="navExistOffPanel"></div>
+    </div>
+    <!--设置网站的背景颜色  end--> 
+    
+    <!-- ------------------------------------------ --> 
+  </div>
+  <div id="webFooterBox" class="webFooterBox  "> 
+    <!--图片详情Div -->
+    <div id='webFooter' class='webFooter'>
+      <div id='footer' class='footer'>
+        <div class='bottomdiv'>
+          <div class='bottom'>
+            <div class='backtop' onclick='Mobi.scrollToTop("webContainerBox")'>top<b></b></div>
+          </div>
+        </div>
+        <div class='technical'>
+          <div class='technicalSupport'>{dede:global.cfg_powerby/}</div>
+          <div class='technicalSupport'>技术支持：织梦58</div>
+        </div>
+      </div>
+    </div>
+    <div id='webCustomerServiceBox' class='webCustomerServiceBox'>
+      <div class='customerServiceDiv' id='customerServiceDiv'>
+        <div id='customServiceLine_5' class='customServiceLine'></div>
+        <div class='service serviceClass_5' id='customerServiceType_5'> {dede:type typeid='1'} <a href="list.php?tid=[field:id/]">
+          <div class='icon iconClass_5 faisco-icons-qq1'></div>
+          <div id='describeName_5' class='describe'>[field:typename/]</a>{/dede:type} </div>
+        </div>
+        <div id='customServiceLine_1' class='customServiceLine'></div>
+        <div class='service serviceClass_1' id='customerServiceType_1'><a id='numberHref_1'
+                                                                              href='tel:400-000-8899'>
+          <div class='icon iconClass_1 faisco-icons-call1'></div>
+          <div id='describeName_1' class='describe'>电话咨询</div>
+          </a></div>
+        <div id='customServiceLine_2' class='customServiceLine'></div>
+        <div class='service serviceClass_2' id='customerServiceType_2'><a id='numberHref_2'
+                                                                              href='sms:15232659985'>
+          <div class='icon iconClass_2 faisco-icons-mail1'></div>
+          <div id='describeName_2' class='describe'>信息咨询</div>
+          </a></div>
+        <div id='customServiceLine_3' class='customServiceLine'></div>
+        <div class='service serviceClass_3' id='customerServiceType_3'><a id='numberHref_3' href='javascript:;'
+                                                                              onclick='Mobi.showMapService()'>
+          <div class='icon iconClass_3 faisco-icons-gps1'></div>
+          <div id='describeName_3' class='describe'>在线地图</div>
+          </a></div>
+      </div>
+    </div>
+    <div class='webMapServiceBox' id='webMapServiceBox'>
+      <div style='display:table;height:100%;width:100%;border-collapse: collapse;'>
+        <div style='display:table-row;'>
+          <div style='display:table-cell;'>
+            <div class='webMapHeader webHeaderBg'>
+              <div class='g_close icon-gClose' onclick='Mobi.closeMapService()'></div>
+            </div>
+          </div>
+        </div>
+        <div style='height:100%;width:100%;display:table-row;'>
+          <div style='height:100%;width:100%;display:table-cell;'>
+            <iframe id='mobiSearchMapFrame' frameborder='0' width='100%' height='100%'
+                            scrolling='no'></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fullScreenDivCotainer" class='fullScreenDivCotainer form'></div>
+  </div>
+  <!--设置网站的背景颜色  start-->
+  <div class="webBackgroundBox  ">
+    <div id="webBodyBackground" class="webBackground "></div>
+    <div id='navExistOffPanel' class='navExistOffPanel'></div>
+  </div>
+  <!--设置网站的背景颜色  end--> 
+  
+  <!-- ------------------------------------------ --> 
+</div>
+<div class="webRight"></div>
+<script type="text/javascript" language="javascript" >
+
+	//管理态下的预览页面提前作处理
+	if( !false && window.top !== window.self){
+		var g_className = document.getElementById("g_body").className;
+		document.getElementById("g_body").className = g_className + ' g_viewMode';
+	}
+</script> 
+<script type="text/javascript" charset="utf-8" src="/m/skin/js/jqmobi.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="/m/skin/js/jqmobi_ui.min.js"></script> 
+<script id="mobiOperationJS" type="text/javascript" charset="utf-8" src="/m/skin/js/mobi.min.js"></script> 
+<script type="text/javascript" src="/m/skin/js/2052.min.js"></script> 
+<script type="text/javascript">
+	var _jsErrCahche = [];
+
+
+
+
+	if (typeof Fai == 'undefined'){
+		Fai = {};
+		//解决页面被嵌套在iframe的场景
+		Fai.top = window;
+	}
+
+
+
+
+	Fai.top._bannerData = {};  //横幅数据
+	Fai.top._resRoot = '/m/dedemao/';
+	Fai.top._templateFrameId = 1000;
+	Fai.top._templateLayoutId = 4;
+	Fai.top._mobiSiteTitleChanged = 0; 	//用于记录网站标题是否有改动
+	Fai.top._mobiSiteTitle = {};   	//网站标题数据
+	Fai.top._onlineServiceJson = {};//在线客服
+	Fai.top._openOnlineService = true;
+	Fai.top._manageMode = false;
+	Fai.top.sessionMemberId = 0;
+	Fai.top.memberName = "";
+	Fai.top._colInfo = {};
+	Fai.top._lcid = 2052;   // 当前的语言版本
+	Fai.top.wxShareIcon_id  = "";
+	Fai.top.wxShareIcon_ShowType = 0;
+
+	jm(document).ready(function() {
+		//判断该栏目是否被删除
+
+		//管理态下的预览页面提前作处理
+		//Mobi.viewPageBeforeInit();
+
+		// 绑定退出事件
+
+
+		//手机视图初始化函数
+		Mobi.initMobiPage({});
+
+
+
+		//前端性能数据上报
+		Mobi.report();
+
+		Mobi.showQqBg();
+		Mobi.showPhonesBg();
+		Mobi.setShowSiteTitleBgFlag('0');
+		Mobi.changeSiteTitleBg();
+		Mobi.logoSizeCompressByMargin();
+		Mobi.titlePositionRefreshByLogo();
+		Mobi.initModulePhotoSwipe('productNewDetailSwipe18');
+		Mobi.initProductSwipe('productNewDetailSwipe18');
+		Mobi.initPbCommUploadImgParam();Mobi.showNewMarketPrice(false);
+		Mobi.initProductRestrict();
+		Fai.top._shareData = {};
+		Mobi.productNewDetailEventInit({'moduleId':18,'productId':20});
+
+	});
+	//Mobi.preventScroll(document.getElementById("g_body"));//阻止滚轮事件冒泡
+</script>
+</body>
+</html>

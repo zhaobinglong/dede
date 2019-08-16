@@ -1,0 +1,60 @@
+<div id="webFooterBox" class="webFooterBox  "> 
+  <!--图片详情Div -->
+  <div id='webFooter' class='webFooter'>
+    <div id='footer' class='footer'>
+      <div class='bottomdiv'>
+        <div class='bottom'>
+          <div class='backtop' onclick='Mobi.scrollToTop("webContainerBox")'>top<b></b></div>
+        </div>
+      </div>
+      <div class='technical'>
+        <div class='technicalSupport'>{dede:global.cfg_powerby/}</div>
+        <div class='technicalSupport'>技术支持：织梦58</div>
+      </div>
+    </div>
+  </div>
+  <div id='webCustomerServiceBox' class='webCustomerServiceBox'>
+    <div class='customerServiceDiv' id='customerServiceDiv'>
+      <div id='customServiceLine_5' class='customServiceLine'></div>
+      <div class='service serviceClass_5' id='customerServiceType_5'> {dede:type typeid='1'} <a href="list.php?tid=[field:id/]">
+        <div class='icon iconClass_5 faisco-icons-qq1'></div>
+        <div id='describeName_5' class='describe'>[field:typename/]</a>{/dede:type} </div>
+      </div>
+      <div id='customServiceLine_1' class='customServiceLine'></div>
+      <div class='service serviceClass_1' id='customerServiceType_1'><a id='numberHref_1'
+                                                                              href='tel:400-000-8899'>
+        <div class='icon iconClass_1 faisco-icons-call1'></div>
+        <div id='describeName_1' class='describe'>电话咨询</div>
+        </a></div>
+      <div id='customServiceLine_2' class='customServiceLine'></div>
+      <div class='service serviceClass_2' id='customerServiceType_2'><a id='numberHref_2'
+                                                                              href='sms:13976782256'>
+        <div class='icon iconClass_2 faisco-icons-mail1'></div>
+        <div id='describeName_2' class='describe'>信息咨询</div>
+        </a></div>
+      <div id='customServiceLine_3' class='customServiceLine'></div>
+      <div class='service serviceClass_3' id='customerServiceType_3'><a id='numberHref_3' href='javascript:;'
+                                                                              onclick='Mobi.showMapService()'>
+        <div class='icon iconClass_3 faisco-icons-gps1'></div>
+        <div id='describeName_3' class='describe'>在线地图</div>
+        </a></div>
+    </div>
+  </div>
+  <div class='webMapServiceBox' id='webMapServiceBox'>
+    <div style='display:table;height:100%;width:100%;border-collapse: collapse;'>
+      <div style='display:table-row;'>
+        <div style='display:table-cell;'>
+          <div class='webMapHeader webHeaderBg'>
+            <div class='g_close icon-gClose' onclick='Mobi.closeMapService()'></div>
+          </div>
+        </div>
+      </div>
+      <div style='height:100%;width:100%;display:table-row;'>
+        <div style='height:100%;width:100%;display:table-cell;'>
+          <iframe id="mobiSearchMapFrame" frameborder="0" width="100%" height="100%" scrolling="no" src="/map.html"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fullScreenDivCotainer" class='fullScreenDivCotainer form'></div>
+</div>
